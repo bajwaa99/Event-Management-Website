@@ -1,0 +1,307 @@
+﻿
+@{
+    ViewBag.Title = "ContactUs";
+}
+
+@*<div id="our teamcontainer" style="position:relative; Height:100%; width: 100%; text-align: center; background-color: black;
+        background-position: top center;background-repeat: no-repeat;background-attachment: scroll;background-size: cover;color: white">
+    <br />
+    <h3></h3>
+    <br />
+    <section id="Venue and Info" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="wow fadeInDown animated">Contact Us</h2>
+            </div>
+            <div class="col-xs-5" style="">
+                <h3 style="margin-top:0;color:#fff;">Our Address</h3>
+                <address style="color:#fff;">
+                    <strong>Company name</strong><br>
+                    1234 Street Dr.<br>
+                    Vancouver, BC<br>
+                    Canada<br>
+                    V6G 1G9<br></br>
+                    <abbr title="Phone">Tel:</abbr> (604) 555-4321
+                </address>
+            </div>
+
+
+        </div>
+    </section>
+</div>*@
+
+<head>
+    
+    <style>
+   body{
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/pic-2.jpg);
+      background-size: cover;
+      background-position: center;
+   }
+
+.single-pricing {
+  font-size: 22px;
+  padding: 3%;
+  background-color: none;
+  border-radius: 0.5%;
+  margin: 0.5%;
+
+  cursor: pointer;
+
+  color: rgb(0, 0, 0);
+
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.single-pricing span {
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 6px 15px;
+  border-radius: 15px;
+  background-color: transparent;
+  position: absolute;
+  top: 28px;
+  right: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.single-pricing h2 {
+  margin-bottom: -5px;
+}
+
+.single-pricing .desc {
+  color: #9d9d9d;
+  padding-bottom: 30px;
+  margin-bottom: 32px;
+  border-bottom: 2px solid #2f2f2f;
+  transition: all 0.2s ease-in-out;
+}
+
+.single-pricing .price {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.single-pricing p {
+  color: #ddd;
+}
+
+.single-pricing p:last-of-type {
+  margin-bottom: 25px;
+}
+
+.single-pricing svg {
+  width: 170px;
+  position: absolute;
+  top: -45px;
+  right: -60px;
+  z-index: -1;
+  transition: all 0.5s ease-in-out;
+}
+
+.single-pricing:hover {
+  border: 4px solid #fff;
+  box-shadow: 0px 10px 18px 0px rgba(0, 0, 0, 0.6);
+  margin: 19px 0 -4px;
+}
+
+.single-pricing:hover span {
+  background-color: none;
+}
+
+.single-pricing:hover .desc {
+  color: #fff;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.single-pricing:hover svg {
+  width: 500%;
+  top: -200%;
+  right: -50%;
+}
+
+.single-pricing:hover .btn {
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0);
+}
+
+
+ .container{
+      width: 90%;
+      margin: auto;
+      overflow: hidden;
+    }
+    /* contact form css */
+
+
+    #contact-section{
+      background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/pic-2.jpg);
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      width: 100% ;
+      padding-bottom: 2%;
+    }
+
+    #contact-section .container h2{
+      text-align: center;
+       text-decoration: underline;
+        /* text-decoration-color:red; */
+        
+        color: rgb(238, 235, 235);
+        letter-spacing: 2px;
+
+    }
+
+
+
+    #contact-section .container p{
+      text-align: center;
+      width: 70%;
+      margin-left: auto;
+       margin-right: auto;
+       padding-bottom: 3%;
+       color: #fff;
+       letter-spacing:3px;
+    }
+
+    .contact-form i.fa{
+      /* color: red; */
+      /* color: #fff; */
+      font-size: 22px;
+      padding: 3%;
+      background-color: none;
+      border-radius: 80%;
+      margin: 2%;
+      /* border: 2px solid #fff; */
+      cursor: pointer;
+      border:2px solid rgb(190, 190, 190);
+      color: rgb(190, 190, 190);
+    }
+
+    .contact-form i.fa:hover{
+      cursor: pointer;
+      border:2px solid white;
+      color: white;
+    }
+
+      .contact-form{
+        display: grid;
+        grid-template-columns: auto auto;
+         }
+
+      .form-info{
+        font-size: 16px;
+        font-style: italic;
+        color: white;
+        letter-spacing: 2px;
+      }
+      input{
+        padding: 10px;
+        margin:10px;
+        width: 70%;
+        background-color:#444;
+        color: white;
+        border: none;
+        outline:none;
+      }
+
+     
+
+       textarea{
+      padding: 10px;
+      margin: 10px;
+      width: 70%;
+      background-color:rgba(136, 133, 133, 0.5);
+      color: white;
+      border: none;
+      outline:none;
+     }
+   
+
+
+      .submit{
+      width: 40%;
+
+	  background-color:#444;
+      padding: 4px;
+      outline: none;
+       /* border: 1px solid #fff;
+      color: #fff; */
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      height: 33px;
+      text-align: center;
+      cursor: pointer;
+      letter-spacing: 2px;
+      margin-left: 3%;
+      border:2px solid rgb(190, 190, 190);
+     }
+
+     .submit:hover{
+           border: 1px solid #fff;
+      color: #fff;
+      cursor: pointer;
+     }
+
+   
+    </style>
+    <!-- Add font awesome CDN-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+    <!-- contact section -->
+    <section id="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Clear out your queries by reaching out to us</p>
+
+            <div class="contact-form">
+
+                <div class="single-pricing text-center">
+
+                    <h2>Visit us at</h2><br>
+                    <p class="desc">45B2 Johar Town, Lahore, Pakistan</p>
+                    <h2>Call us at</h2><br>
+                                       <p>+92 (0) 7 9180 3458</p>
+
+                    <svg viewBox="0 0 170 193">
+                        <path fill-rule="evenodd" fill="rgb(238, 21, 21)"
+                              d="M39.000,31.999 C39.000,31.999 -21.000,86.500 9.000,121.999 C39.000,157.500 91.000,128.500 104.000,160.999 C117.000,193.500 141.000,201.000 150.000,183.000 C159.000,165.000 172.000,99.000 167.000,87.000 C162.000,75.000 170.000,63.000 152.000,45.000 C134.000,27.000 128.000,15.999 116.000,11.000 C104.000,6.000 89.000,-0.001 89.000,-0.001 L39.000,31.999 Z" />
+                    </svg>
+                </div>
+                <div>
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" placeholder="Last Name"><br>
+                        <input type="Email" placeholder="Email" required><br>
+                        <input type="text" placeholder="Message" rows="5" required><br><br>
+                        <a href="#" class="btn btn-primary">Submit Message</a>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!--jquery-->
+    <script src="~/assets/js/jquery-3.3.1.js"></script>
+    <!--plugins-->
+    <script src="~/assets/js/bootstrap.bundle.js"></script>
+    <script src="~/assets/js/loaders.css.js"></script>
+    <script src="~/assets/js/aos.js"></script>
+    <script src="~/assets/js/swiper.min.js"></script>
+    <script src="~/assets/js/lightgallery-all.min.js"></script>
+    <!--template script-->
+    <script src="~/assets/js/main.js"></script>
+
+    <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+
+

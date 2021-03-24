@@ -1,0 +1,65 @@
+﻿@model Project.Models.Service
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<style>
+    body {
+        background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/pic-2.jpg);
+        color: white;
+    }
+
+    .form-control {
+        width: 80%;
+        margin: auto;
+        padding:5px;
+    }
+</style>
+@using (Html.BeginForm("Create", "Services", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="single-pricing text-center">
+    <h1>ADD SERVICE</h1>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <h3>Service Type</h3>
+
+
+    @Html.EditorFor(model => model.service_type, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.service_type, "", new { @class = "text-danger" })
+
+    <br />
+    <br />
+    <h3>Description</h3>
+
+    @Html.EditorFor(model => model.service_description, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.service_description, "", new { @class = "text-danger" })
+
+
+    <br />
+    <h3>Image</h3>
+    <input name="file" id="file" type="file" class="form-control" />
+    @Html.ValidationMessageFor(model => model.service_image, "", new { @class = "text-danger" })
+
+    <br />
+    <input type="submit" value="Create" class="btn btn-primary" />
+
+</div>
+}
+
+
+
+<!--jQuery-->
+<script src="~/assets/js/jquery-3.3.1.js"></script>
+<!--Plugins-->
+<script src="~/assets/js/bootstrap.bundle.js"></script>
+<script src="~/assets/js/loaders.css.js"></script>
+<script src="~/assets/js/aos.js"></script>
+<script src="~/assets/js/swiper.min.js"></script>
+<script src="~/assets/js/lightgallery-all.min.js"></script>
+<!--Template Script-->
+<script src="~/assets/js/main.js"></script>

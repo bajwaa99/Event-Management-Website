@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Project.Models.Feedback>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<style>
+    body {
+        background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/pic.jpg);
+        
+        text-align: center;
+    }
+</style>
+<br />
+<h1 style="color:white">Feedbacks</h1>
+<button id="add" class="btn btn-primary">ADD</button>
+<br />
+<br />
+<!-- Testimonial and Clients Start -->
+<section class="testimonial-and-clients">
+    
+        <div class="testimonials">
+            <div class="swiper-container test-slider">
+                <div class="swiper-wrapper">
+                    @foreach (var item in Model)
+                    {
+                        <div class="swiper-slide text-center">
+                            <div class="row">
+                                <div class="offset-lg-1 col-lg-10">
+                                    <div class="test-img" data-aos="fade-up" data-aos-delay="0" data-aos-offset="0">
+                                        <img src="/images/client1.png" alt="Testimonial 1">
+                                    </div>
+                                    <h5 data-aos="fade-up" data-aos-delay="200" data-aos-duration="600"
+                                        data-aos-offset="0">
+                                        @item.username
+                                        
+                                    </h5>
+                                    <span data-aos="fade-up" data-aos-delay="400" data-aos-duration="600"
+                                          data-aos-offset="0">
+                                        @item.feedback_description
+                                    </span>
+                                    <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="600"
+                                       data-aos-offset="0">
+                                        @item.recommendation
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                <div class="test-pagination"></div>
+            </div>
+        </div>
+        
+</section>
+<!-- Testimonial and Clients End -->
+<!-- Pricing End -->
+<!--jQuery-->
+<script src="~/assets/js/jquery-3.3.1.js"></script>
+<!--Plugins-->
+<script src="~/assets/js/bootstrap.bundle.js"></script>
+<script src="~/assets/js/loaders.css.js"></script>
+<script src="~/assets/js/aos.js"></script>
+<script src="~/assets/js/swiper.min.js"></script>
+<script src="~/assets/js/lightgallery-all.min.js"></script>
+<!--Template Script-->
+<script src="~/assets/js/main.js"></script>
+
+<script type="text/javascript">
+    document.getElementById("add").onclick = function () {
+        window.location.href = "Feedbacks/Create";
+    };
+</script>

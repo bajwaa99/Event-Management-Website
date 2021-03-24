@@ -1,0 +1,163 @@
+﻿@model IEnumerable<Project.Models.Event>
+
+@{
+    ViewBag.Title = "Event";
+}
+
+<style>
+    body {
+        
+        background: url(/images/event.jpg);
+        
+    }
+
+    section {
+        width: 100%;
+        height: 100vh;
+        
+    }
+
+        section .leftBox {
+            width: 50%;
+            height: 100%;
+            float: left;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+            section .leftBox .content {
+                color: #fff;
+                background: rgba(0,0,0,.5);
+                padding: 40px;
+                transition: .5s;
+            }
+
+                section .leftBox .content:hover {
+                    background: #e91e63;
+                }
+
+                section .leftBox .content h1 {
+                    margin: 0;
+                    padding: 0;
+                    font-size: 50px;
+                    text-transform: uppercase;
+                }
+
+                section .leftBox .content p {
+                    margin: 10px 0 0;
+                    padding: 0;
+                }
+
+        section .events {
+            position: relative;
+            padding: 20px;
+            margin-top: 10px;
+            width: 50%;
+            
+            background: rgba(0,0,0,.5);
+            float: right;
+            box-sizing: border-box;
+        }
+
+            section .events ul {
+                padding: 40px;
+                box-sizing: border-box;
+            }
+
+                section .events ul li {
+                    list-style: none;
+                    
+                    box-sizing: border-box;
+                    height: 200px;
+                    padding: 20px;
+                    margin-top: 20px;
+
+                }
+
+                    section .events ul li .date {
+                        
+                        padding: 10px;
+                        background: #262626;
+                        box-sizing: border-box;
+                        
+                        
+                        float: left;
+                        text-align: center;
+                        transition: .5s;
+                    }
+
+                    section .events ul li:hover .date {
+                        background: #e91e63;
+                    }
+
+                    section .events ul li .date h2 {
+                        color: #fff;
+                        font-size: 18px;
+                    }
+
+                    section .events ul li .details {
+                        padding: 20px;
+                        background: #fff;
+                        box-sizing: border-box;
+                        width: 70%;
+                        
+                        float: left;
+                    }
+
+                        section .events ul li .details h3 {
+                            
+                            font-size: 20px;
+                        }
+
+                        section .events ul li .details p {
+                            font-size: 14px;
+                        }
+</style>
+
+<section>
+    <div class="leftBox">
+        <div class="content">
+            <h1>Events </h1>
+            <p>
+                Events are the one we really put our effor it. We enjoy while
+                seeing our customers happy. It is a great feeling seeing them enjoying
+                in an environment we have set for them.
+            </p>
+        </div>
+    </div>
+    <div class="events">
+        <ul>
+            @foreach (var item in Model)
+            {
+
+                <li>
+                    <div class="date">
+                        <h2>20<br><span>December</span></h2>
+
+                    </div>
+                    <div class="details">
+                        <h3>@item.event_type</h3>
+                        <p>@item.event_description</p>
+
+                    </div>
+                    <div>
+                        @Html.ActionLink("Details", "Details", new { id = item.eventId }, new { @class = "btn btn-primary" })
+                    </div>
+                </li>
+            }
+
+        </ul>
+    </div>
+</section>
+
+
+<!--jQuery-->
+<script src="~/assets/js/jquery-3.3.1.js"></script>
+<!--Plugins-->
+<script src="~/assets/js/bootstrap.bundle.js"></script>
+<script src="~/assets/js/loaders.css.js"></script>
+<script src="~/assets/js/aos.js"></script>
+<script src="~/assets/js/swiper.min.js"></script>
+<script src="~/assets/js/lightgallery-all.min.js"></script>
+<!--Template Script-->
+<script src="~/assets/js/main.js"></script>

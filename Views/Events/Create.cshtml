@@ -1,0 +1,69 @@
+﻿@model Project.Models.Event
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<style>
+    body {
+        background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/pic-2.jpg);
+    }
+
+    .form-control{
+        width:80%;
+        margin:auto;
+    }
+</style>
+
+
+
+@using (Html.BeginForm("Create","Events", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="single-pricing text-center">
+    <h1>ADD EVENT</h1>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <h3>Event Type</h3>
+
+    @Html.EditorFor(model => model.event_type, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.event_type, "", new { @class = "text-danger" })
+
+    <br />
+    <br />
+    <h3>Description</h3>
+
+    @Html.EditorFor(model => model.event_description, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(model => model.event_description, "", new { @class = "text-danger" })
+
+
+    <br />
+    <h3>Image</h3>
+    <input name="file" id="file" type="file" class="form-control" />
+    @*@Html.EditorFor(model => model.event_image, new { htmlAttributes = new { @class = "form-control" } })*@
+    @Html.ValidationMessageFor(model => model.event_image, "", new { @class = "text-danger" })
+    <br />
+    <input type="submit" value="Create" class="btn btn-primary" />
+
+
+</div>
+
+
+}
+
+
+
+<!--jQuery-->
+<script src="~/assets/js/jquery-3.3.1.js"></script>
+<!--Plugins-->
+<script src="~/assets/js/bootstrap.bundle.js"></script>
+<script src="~/assets/js/loaders.css.js"></script>
+<script src="~/assets/js/aos.js"></script>
+<script src="~/assets/js/swiper.min.js"></script>
+<script src="~/assets/js/lightgallery-all.min.js"></script>
+<!--Template Script-->
+<script src="~/assets/js/main.js"></script>
+

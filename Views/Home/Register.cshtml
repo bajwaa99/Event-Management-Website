@@ -1,0 +1,74 @@
+﻿@model Project.Models.RegisterBindingModel
+
+@{
+    ViewBag.Title = "Register";
+}
+<style>
+    body {
+        background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/pic-2.jpg);
+       
+    }
+    
+</style>
+<form class="container" style="width:40%;">
+    <div class="single-pricing text-center" style="min-width:250px; padding-left:15%; padding-right:15%">
+
+        <h1 style="color:white">REGISTER</h1>
+
+        <hr />
+
+        <div class="single-widget subscribe-widget">
+
+            <input id="uname" type="email" class="field form-control" placeholder="Username" required />
+            <hr />
+
+            <input id="pass" type="password" class="field form-control" placeholder="Password" required />
+            <hr />
+
+            <input id="cpass" type="password" class="field form-control" placeholder="Confirm Password" required />
+            <hr />
+
+        </div>
+
+        <input id="register" type="button" value="REGISTER" class="btn btn-primary" />
+        
+
+        <hr />
+        <p1>Already have an account? </p1><label>@Html.ActionLink("Login", "Login", "Home")</label>
+
+    </div>
+
+</form>
+<!--jQuery-->
+<script src="~/assets/js/jquery-3.3.1.js"></script>
+<!--Plugins-->
+<script src="~/assets/js/bootstrap.bundle.js"></script>
+<script src="~/assets/js/loaders.css.js"></script>
+<script src="~/assets/js/aos.js"></script>
+<script src="~/assets/js/swiper.min.js"></script>
+<script src="~/assets/js/lightgallery-all.min.js"></script>
+<!--Template Script-->
+<script src="~/assets/js/main.js"></script>
+
+<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#register').click(function () {
+
+            $.ajax({
+                url: "http://localhost:50008/api/Account/Register",
+                method: "POST",
+                data: {
+                    Username: $('#uname').val(),
+                    Password: $('#pass').val(),
+                    ConfirmPassword: $('#cpass').val()
+                },
+                success: function () {
+                    window.location.href = "Index"
+                }
+
+            });
+        });
+    });
+
+</script>

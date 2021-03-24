@@ -1,0 +1,164 @@
+﻿@model IEnumerable<Project.Models.Service>
+
+@{
+    ViewBag.Title = "Services";
+}
+
+<style>
+    body {
+        background: url(/images/event.jpg);
+        
+    }
+
+    section {
+        width: 100%;
+        height: 100vh;
+    }
+
+        section .leftBox {
+            width: 50%;
+            height: 100%;
+            float: left;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+            section .leftBox .content {
+                color: #fff;
+                background: rgba(0,0,0,.5);
+                padding: 40px;
+                transition: .5s;
+            }
+
+                section .leftBox .content:hover {
+                    background: #e91e63;
+                }
+
+                section .leftBox .content h1 {
+                    margin: 0;
+                    padding: 0;
+                    font-size: 50px;
+                    text-transform: uppercase;
+                }
+
+                section .leftBox .content p {
+                    margin: 10px 0 0;
+                    padding: 0;
+                }
+
+        section .events {
+            
+            padding: 20px;
+            margin-top: 10px;
+            width: 50%;
+            
+            background: rgba(0,0,0,.5);
+            float: right;
+            box-sizing: border-box;
+        }
+
+            section .events ul {
+                
+                box-sizing: border-box;
+            }
+
+                section .events ul li {
+                    list-style: none;
+                    
+                    box-sizing: border-box;
+                    
+                    padding: 20px;
+                    margin-top: 20px;
+                }
+
+                    section .events ul li .date {
+                        position: relative;
+                        padding: 20px;
+                        background: #262626;
+                        box-sizing: border-box;
+                        width: 30%;
+                        height: 100%;
+                        float: left;
+                        text-align: center;
+                        transition: .5s;
+                    }
+
+                    section .events ul li:hover .date {
+                        background: #e91e63;
+                    }
+
+                    section .events ul li .date h2 {
+                        position: absolute;
+                        margin: 0;
+                        padding: 0;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        color: #fff;
+                        line-height: 30px
+                    }
+
+                        section .events ul li .date h2 span {
+                            font-size: 18px;
+                        }
+
+                    section .events ul li .details {
+                        padding: 20px;
+                        background: #fff;
+                        box-sizing: border-box;
+                        width: 70%;
+                        height: 100%;
+                        float: left;
+                    }
+
+                        section .events ul li .details h3 {
+                            position: relative;
+                            margin: 0;
+                            padding: 0;
+                            font-size: 20px;
+                        }
+
+                        section .events ul li .details p {
+                            position: relative;
+                            margin: 10px 0 0;
+                            padding: 0;
+                            font-size: 14px;
+                        }
+</style>
+
+<section>
+    <div class="leftBox">
+        <div class="content">
+            <h1>Services </h1>
+            <p>
+                Our team is capable of connecting the dots in your event plan to optimize the effectiveness of your event plan and limit the unfortunate incidents that harm your event atmosphere.
+            </p>
+        </div>
+    </div>
+    <div class="events">
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    
+                    
+                        <a href="@item.service_type" class="btn btn-primary">@item.service_type</a>
+                    
+                </li>
+
+            }
+        </ul>
+    </div>
+</section>
+
+
+<!--jQuery-->
+<script src="~/assets/js/jquery-3.3.1.js"></script>
+<!--Plugins-->
+<script src="~/assets/js/bootstrap.bundle.js"></script>
+<script src="~/assets/js/loaders.css.js"></script>
+<script src="~/assets/js/aos.js"></script>
+<script src="~/assets/js/swiper.min.js"></script>
+<script src="~/assets/js/lightgallery-all.min.js"></script>
+<!--Template Script-->
+<script src="~/assets/js/main.js"></script>

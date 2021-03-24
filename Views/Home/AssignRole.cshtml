@@ -1,0 +1,57 @@
+﻿@model Project.Models.RoleViewModels
+
+@{
+    ViewBag.Title = "AssignRole";
+}
+
+<h2>Assign Role</h2>
+
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="text" id="id" class="form-control" />
+            @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="text" id="rolename" class="form-control" />
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input id="submit" type="button" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+
+
+<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#submit').click(function () {
+
+            $.ajax({
+                url: 'http://localhost:50008/api/Account/AssignRole',
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Bearer ' + sessionStorage.getItem('accesstoken')
+                },
+                data: {
+                    Id: $('#id').val(),
+                    Name: $('#rolename').val(),
+                }
+
+            });
+        });
+    });
+
+</script>

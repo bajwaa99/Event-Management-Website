@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Reservation";
+}
+
+<style>
+    body {
+        background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/pic-2.jpg);
+        color: white;
+    }
+    .form-control{
+        width:50%;
+        margin:auto;
+    }
+</style>
+
+@using (Html.BeginForm("Create", "Reservations", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+
+    <div id="reservationcontainer" class="container text-center single-pricing center">
+        <h1>MAKE A RESERVATION</h1>
+        <div>
+            <h6>Reservation Date:</h6>
+            <input type="date" class="form-control" id="reservationdate" />
+        </div>
+        <br />
+        <div>
+            <h6>Reservation Time:</h6>
+            <input type="time" class="form-control" id="reservationtime" />
+        </div>
+        <br />
+        <div class="dropdown">
+            <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+                Select Service Type
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item">Wedding</a>
+                <a class="dropdown-item">Corporate</a>
+                <a class="dropdown-item">Birthday</a>
+                <a class="dropdown-item">Catering</a>
+            </div>
+        </div>
+        <br />
+        <div>
+            <h6>Payment:</h6>
+            <input type="number" class="form-control" id="payment" />
+        </div>
+        <br />    <br />    <br />
+        <input type="submit" value="Reserve" class="btn btn-primary" />
+
+    </div>
+
+}
+
+
+
+    <!--jQuery-->
+    <script src="~/assets/js/jquery-3.3.1.js"></script>
+    <!--Plugins-->
+    <script src="~/assets/js/bootstrap.bundle.js"></script>
+    <script src="~/assets/js/loaders.css.js"></script>
+    <script src="~/assets/js/aos.js"></script>
+    <script src="~/assets/js/swiper.min.js"></script>
+    <script src="~/assets/js/lightgallery-all.min.js"></script>
+    <!--Template Script-->
+    <script src="~/assets/js/main.js"></script>

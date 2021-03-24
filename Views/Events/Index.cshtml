@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Project.Models.Event>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<style>
+    body {
+        background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/pic-2.jpg);
+    }
+
+    td {
+        color: white;
+    }
+</style>
+
+<form class="container">
+    <div class="single-pricing text-center" style="padding-left:5%; padding-right:5%">
+
+        <p>
+            @Html.ActionLink("Create New", "Create", "", new { @class = "btn btn-primary" })
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.event_type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.event_description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.event_image)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.event_type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.event_description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.event_image)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.eventId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.eventId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.eventId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</form>
+
+
+<!--jQuery-->
+<script src="~/assets/js/jquery-3.3.1.js"></script>
+<!--Plugins-->
+<script src="~/assets/js/bootstrap.bundle.js"></script>
+<script src="~/assets/js/loaders.css.js"></script>
+<script src="~/assets/js/aos.js"></script>
+<script src="~/assets/js/swiper.min.js"></script>
+<script src="~/assets/js/lightgallery-all.min.js"></script>
+<!--Template Script-->
+<script src="~/assets/js/main.js"></script>

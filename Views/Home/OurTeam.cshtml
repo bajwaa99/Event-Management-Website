@@ -1,0 +1,189 @@
+﻿
+@{
+                /**/
+
+                ViewBag.Title = "OurTeam";
+}
+
+<style>
+
+    body {
+        
+        background-color: #3c1928;
+        align-content:center;
+        text-align:center;
+        color:white;
+    }
+
+
+
+
+.team-section .team-items{
+    
+	flex-basis: 100%;
+	max-width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.team-section .team-items .item{
+ flex-basis: calc(25% - 30px);
+ max-width: calc(25% - 30px);
+ transition: all .5s ease;
+ margin-bottom: 40px;
+}
+.team-section .team-items .item img{
+	display: block;
+	width: 100%;
+	border-radius: 8px;
+}
+
+.team-section .team-items .item .inner{
+	position: relative;
+	z-index: 11;
+	padding:0 15px;
+}
+.team-section .team-items .item .inner .info{
+	background-color:#751b41;
+	text-align: center;
+	padding: 20px 15px;
+	border-radius:8px;
+	transition: all .5s ease;
+	margin-top: -40px;
+}
+.team-section .team-items .item:hover  .info{
+    transform: translateY(-20px);
+}
+.team-section .team-items .item:hover{
+ transform: translateY(-10px);
+}
+.team-section .team-items .item .inner .info h5{
+	margin:0;
+	font-size: 18px;
+	font-weight: 600;
+	color:#ffffff;
+}
+.team-section .team-items .item .inner .info p{
+	font-size: 16px;
+	font-weight: 400;
+	color:#c5c5c5;
+	margin:10px 0 0;
+}
+
+.team-section .team-items .item .inner .info .social-links{
+	padding-top: 15px;
+}
+
+.team-section .team-items .item .inner .info .social-links a{
+	display: inline-block;
+	height: 32px;
+	width: 32px;
+	border-radius: 50%;
+	margin:0 2px;
+	text-align: center;
+	line-height: 32px;
+	font-size:16px;
+	transition: all .5s ease;
+}
+
+.team-section .team-items .item .inner .info .social-links a:hover{
+	box-shadow: 0 0 10px #000;
+}
+
+    </style>
+
+<body>
+
+    <section class="team-section">
+        <div class="container">
+            
+                <div class="section-title">
+                    <h1>Our Team</h1>
+                    <p>We work together to have more fun and creativity</p>
+                </div>
+            
+            
+                <div class="team-items">
+                    <div class="item">
+                        <img src="/images/Arslan-1.jpg" alt="team" />
+                        <div class="inner">
+                            <div class="info">
+                                <h5>Arslan Bajwa</h5>
+                                <p>17L-4113</p>
+                                <div class="social-links">
+                                    <a href=""><span class="fa fa-facebook"></span></a>
+                                    <a href=""><span class="fa fa-twitter"></span></a>
+                                    <a href=""><span class="fa fa-linkedin"></span></a>
+                                    <a href=""><span class="fa fa-youtube"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="/images/Hifza-2.jpg" alt="team" />
+                        <div class="inner">
+                            <div class="info">
+                                <h5>Hifza Sohail</h5>
+                                <p>17L-6309</p>
+                                <div class="social-links">
+                                    <a href=""><span class="fa fa-facebook"></span></a>
+                                    <a href=""><span class="fa fa-twitter"></span></a>
+                                    <a href=""><span class="fa fa-linkedin"></span></a>
+                                    <a href=""><span class="fa fa-youtube"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="/images/Nimra-3.jpg" alt="team" />
+                        <div class="inner">
+                            <div class="info">
+                                <h5>Nimra Abid</h5>
+                                <p>17L-4088</p>
+                                <div class="social-links">
+                                    <a href=""><span class="fa fa-facebook"></span></a>
+                                    <a href=""><span class="fa fa-twitter"></span></a>
+                                    <a href=""><span class="fa fa-linkedin"></span></a>
+                                    <a href=""><span class="fa fa-youtube"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="/images/Ammara-4.jpg" alt="team" />
+                        <div class="inner">
+                            <div class="info">
+                                <h5>Ammara Naseer</h5>
+                                <p>17L-4542</p>
+                                <div class="social-links">
+                                    <a href=""><span class="fa fa-facebook"></span></a>
+                                    <a href=""><span class="fa fa-twitter"></span></a>
+                                    <a href=""><span class="fa fa-linkedin"></span></a>
+                                    <a href=""><span class="fa fa-youtube"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </section>
+
+</body>
+
+
+
+
+<!--jQuery-->
+<script src="~/assets/js/jquery-3.3.1.js"></script>
+<!--Plugins-->
+<script src="~/assets/js/bootstrap.bundle.js"></script>
+<script src="~/assets/js/loaders.css.js"></script>
+<script src="~/assets/js/aos.js"></script>
+<script src="~/assets/js/swiper.min.js"></script>
+<script src="~/assets/js/lightgallery-all.min.js"></script>
+<!--Template Script-->
+<script src="~/assets/js/main.js"></script>
+
+<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+

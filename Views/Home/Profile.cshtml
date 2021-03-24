@@ -1,0 +1,91 @@
+﻿@model Project.Models.UserInfoViewModel
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+
+    
+    <style>
+        body {
+            font-family: sans-serif;
+            color: #3c3939;
+            background-color: #f1f1f1;
+            background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/pic-2.jpg);
+        }
+
+        img {
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+        }
+
+    </style>
+
+
+    <center>
+        <div class="single-pricing text-center" style="width:50%">
+            <div class="image-container">
+                <img src="/images/user.jpeg"><br><br>
+                <div class="title">
+                    <h2 id="username"></h2>
+                </div>
+            </div>
+            <div class="main-container">
+                <p id="email"><i class="fa fa-envelope" aria-hidden="true"></i></p>
+            </div>
+            <a href="EditProfile" class="btn btn-primary">Edit Profile</a>
+
+            <svg viewBox="0 0 170 193">
+                <path fill-rule="evenodd" fill="rgb(238, 21, 21)"
+                      d="M39.000,31.999 C39.000,31.999 -21.000,86.500 9.000,121.999 C39.000,157.500 91.000,128.500 104.000,160.999 C117.000,193.500 141.000,201.000 150.000,183.000 C159.000,165.000 172.000,99.000 167.000,87.000 C162.000,75.000 170.000,63.000 152.000,45.000 C134.000,27.000 128.000,15.999 116.000,11.000 C104.000,6.000 89.000,-0.001 89.000,-0.001 L39.000,31.999 Z" />
+            </svg>
+        </div>
+
+    </center>
+
+
+<!--jQuery-->
+<script src="~/assets/js/jquery-3.3.1.js"></script>
+<!--Plugins-->
+<script src="~/assets/js/bootstrap.bundle.js"></script>
+<script src="~/assets/js/loaders.css.js"></script>
+<script src="~/assets/js/aos.js"></script>
+<script src="~/assets/js/swiper.min.js"></script>
+<script src="~/assets/js/lightgallery-all.min.js"></script>
+<!--Template Script-->
+<script src="~/assets/js/main.js"></script>
+
+<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (sessionStorage.getItem('accessToken') == null) {
+            window.location.href = "Login";
+        }
+        else {
+            $.ajax({
+                url: 'http://localhost:50008/api/Account/UserInfo',
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Bearer ' + sessionStorage.getItem('accessToken')
+                },
+                success: function (response) {
+                    
+                    $('#email').append(response.Email);
+                    $('#username').append(response.UserName);
+
+                },
+                error: function (jqXHR) {
+                    window.location.href = "Index"
+                }
+
+            });
+        }
+    });
+
+</script>
+
+
+
+

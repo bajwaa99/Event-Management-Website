@@ -1,0 +1,211 @@
+﻿
+@{
+    ViewBag.Title = "Corporate Service";
+}
+
+    <title>Birthday</title>
+    <style>
+		body{
+		
+		font-family: sans-serif;
+		overflow: hidden;
+		}
+		.banner1,.banner2, .banner3, .banner4{
+		height:100vh;
+		width: 100%;
+		position: absolute;
+		left:0;
+		top:0;
+		}
+            .banner1 img, .banner2 img, .banner3 img, .banner4 img {
+                width: 120%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                animation: zoom-out 3s linear infinite;
+            }
+        
+		@@keyframes zoom-out{
+			100%{
+				width: 100%;
+			}
+		}
+		.text-box{
+		width: 600px;
+		position: absolute;
+		top: 200px;
+		left: 100px;
+		color: #fff;
+		animation: textup 12s linear infinite;
+		transform: translateY(100px);
+		}
+
+		.text-box h1{
+		margin-bottom: 40px;
+		}
+		.text-box p{
+		font-size: 14px;
+		line-height: 18px;
+		margin-top: 80px;
+		}
+		.text-box span{
+			background: red;
+			height: 1px;
+			width: 100px;
+			position: absolute;
+			left: 0;
+		}
+		.banner1{
+		animation: slide1 12s linear infinite;
+		}
+		.banner2{
+		animation: slide2 12s linear infinite;
+		}
+		.banner3{
+		animation: slide3 12s linear infinite;
+		}
+		.banner4{
+		animation: slide4 12s linear infinite;
+		}
+
+		@@keyframes slide1{
+		0%{
+			visibility: visible;
+		}
+		25%{
+			visibility: hidden;
+		}
+		50%{
+			visibility: hidden;
+		}
+		75%{
+			visibility: hidden;
+		}
+		100%{
+			visibility: visible;
+		}
+
+		}
+		@@keyframes slide2{
+		0%{
+			visibility: hidden;
+		}
+            25% {
+                visibility: visible;
+            }
+            50% {
+                visibility: hidden;
+            }
+		75%{
+			visibility: hidden;
+		}
+		100%{
+			visibility: hidden;
+		}
+
+		}
+		@@keyframes slide3{
+		0%{
+			visibility: hidden;
+		}
+		25%{
+			visibility: hidden;
+		}
+            50% {
+                visibility: visible;
+            }
+            75% {
+                visibility: hidden;
+            }
+		100%{
+			visibility: hidden;
+		}
+
+		}
+		@@keyframes slide4{
+		0%{
+			visibility: hidden;
+		}
+		25%{
+			visibility: hidden;
+		}
+		50%{
+			visibility: hidden;
+		}
+            75% {
+                visibility: visible;
+            }
+            100% {
+                visibility: hidden;
+            }
+
+		}
+
+		@@keyframes textup{
+			10%{
+				transform: translateY(0px);
+			}
+			100%{
+				transform: translateY(0px);
+			}
+		}
+		.text-box1{
+			animation-delay: 0s;
+		}
+		.text-box2{
+			animation-delay: 3s;
+		}
+		.text-box3{
+			animation-delay: 6s;
+		}
+		.text-box4{
+			animation-delay: 9s;
+		}
+    </style>
+
+    <div class="banner1">
+        <img src="/images/meeting-1.jpg">
+        <div class="text-box text-box1">
+            <h1>Meeting</h1>
+            <span></span>
+
+        </div>
+    </div>
+    <div class="banner2">
+        <img src="/images/meeting-2.jpg">
+        <div class="text-box text-box2">
+            <h1>Seminar</h1>
+            <span></span>
+
+        </div>
+    </div>
+    <div class="banner3">
+        <img src="/images/meeting-3.png">
+        <div class="text-box text-box3">
+            <h1>Conference</h1>
+            <span></span>
+
+        </div>
+    </div>
+    <div class="banner4">
+        <img src="/images/meeting-4.jpg">
+        <div class="text-box text-box4">
+            <h1>Ceremony</h1>
+            <span></span>
+
+        </div>
+    </div>
+
+
+
+<!--jQuery-->
+<script src="~/assets/js/jquery-3.3.1.js"></script>
+<!--Plugins-->
+<script src="~/assets/js/bootstrap.bundle.js"></script>
+<script src="~/assets/js/loaders.css.js"></script>
+<script src="~/assets/js/aos.js"></script>
+<script src="~/assets/js/swiper.min.js"></script>
+<script src="~/assets/js/lightgallery-all.min.js"></script>
+<!--Template Script-->
+<script src="~/assets/js/main.js"></script>

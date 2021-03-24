@@ -1,0 +1,85 @@
+﻿@model Project.Models.ChangePasswordBindingModel
+
+@{
+    ViewBag.Title = "EditProfile";
+}
+
+
+<style>
+    body {
+        background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/pic-2.jpg);
+    }
+
+    .form-control {
+        width: 80%;
+        margin: auto;
+        padding:5px;
+    }
+</style>
+
+
+<div class="single-pricing text-center">
+    <h1>EDIT PROFILE</h1>
+    <hr />
+
+
+    <h3>Old Password</h3>
+
+    <input type="password" id="oldpass" class="form-control" />
+    <br /><br />
+
+          <h3>New Password</h3>
+
+    <input type="password" id="newpass" class="form-control" />
+    <br /><br />
+
+
+
+    <h3>Confirm Password</h3>
+
+    <input type="password" id="confirmpass" class="form-control" />
+
+    <br /><br />
+
+
+            <input id="submit" type="button" value="Save" class="btn btn-primary" />
+        
+    
+</div>
+
+<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#submit').click(function () {
+
+            $.ajax({
+                url: 'http://localhost:50008/api/Account/ChangePassword',
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Bearer ' + sessionStorage.getItem('accessToken')
+                },
+                data: {
+                    OldPassword: $('#oldpass').val(),
+                    NewPassword: $('#newpass').val(),
+                    ConfirmPassword: $('#confirmpass').val()
+                },
+                success: function () {
+                    window.location.href = 'Profile';
+                }
+            });
+        });
+    });
+
+</script>
+
+
+<!--jQuery-->
+<script src="~/assets/js/jquery-3.3.1.js"></script>
+<!--Plugins-->
+<script src="~/assets/js/bootstrap.bundle.js"></script>
+<script src="~/assets/js/loaders.css.js"></script>
+<script src="~/assets/js/aos.js"></script>
+<script src="~/assets/js/swiper.min.js"></script>
+<script src="~/assets/js/lightgallery-all.min.js"></script>
+<!--Template Script-->
+<script src="~/assets/js/main.js"></script>
