@@ -1,4 +1,5 @@
 **EVENT MANAGEMENT APP**
+The website was developed in ASP.NET using MVC
 
 **1. Introduction**
 
